@@ -1,0 +1,527 @@
+languages:
+  en:
+  - id: full_information
+    scenario: full_information
+    input_text: I own two acres in Tamil Nadu, I use a borewell, and nobody in my family pays income tax.
+    pending_question: null
+    expected_slots:
+      owns_land: true
+      state: Tamil Nadu
+      water_source: borewell
+      pays_income_tax: false
+    forbidden_slots: {}
+    expected_dialogue_action: fill
+    reviewed_by: null
+  - id: ownership_negation
+    scenario: ownership_negation
+    input_text: The land is not in my name, it is my father's.
+    pending_question: null
+    expected_slots:
+      owns_land: false
+    forbidden_slots:
+      owns_land: true
+    expected_dialogue_action: fill
+    reviewed_by: null
+  - id: short_yes_tax
+    scenario: short_yes
+    input_text: Yes, my brother does.
+    pending_question: pays_income_tax
+    expected_slots:
+      pays_income_tax: true
+    forbidden_slots: {}
+    expected_dialogue_action: fill
+    reviewed_by: null
+  - id: short_no_tax
+    scenario: short_no
+    input_text: 'No'
+    pending_question: pays_income_tax
+    expected_slots:
+      pays_income_tax: false
+    forbidden_slots: {}
+    expected_dialogue_action: fill
+    reviewed_by: null
+  - id: uncertain_tax
+    scenario: uncertain_answer
+    input_text: I don't know.
+    pending_question: pays_income_tax
+    expected_slots: {}
+    forbidden_slots:
+      pays_income_tax: any
+    expected_dialogue_action: re-ask
+    reviewed_by: null
+  - id: state_correction
+    scenario: state_correction
+    input_text: No, the state is Karnataka.
+    pending_question: __fix_slot__
+    initial_slots:
+      state: Tamil Nadu
+      water_source: canal
+    expected_slots:
+      state: Karnataka
+    forbidden_slots:
+      water_source: changes
+    expected_dialogue_action: correct
+    reviewed_by: null
+  - id: code_mixed
+    scenario: code_mixed
+    input_text: I have 2 acre land, borewell use.
+    pending_question: null
+    expected_slots:
+      water_source: borewell
+    forbidden_slots:
+      owns_land: false
+    expected_dialogue_action: fill
+    reviewed_by: null
+  - id: sensitive_numbers
+    scenario: sensitive_numbers
+    input_text: My Aadhaar is 1234 5678 9012 and I have two acres.
+    pending_question: null
+    expected_slots: {}
+    forbidden_slots:
+      aadhaar: any
+      bank_account: any
+    expected_dialogue_action: fill
+    reviewed_by: null
+  - id: noisy_low_confidence
+    scenario: noise_low_confidence
+    input_text: The recording is unclear.
+    pending_question: pays_income_tax
+    expected_slots: {}
+    forbidden_slots:
+      pays_income_tax: any
+    expected_dialogue_action: fallback
+    mock_stt_confidence: 0.3
+    reviewed_by: null
+  - id: noisy_empty_transcript
+    scenario: noise_empty_transcript
+    input_text: ''
+    pending_question: pays_income_tax
+    expected_slots: {}
+    forbidden_slots:
+      pays_income_tax: any
+    expected_dialogue_action: fallback
+    mock_stt_confidence: 1.0
+    reviewed_by: null
+  - id: first_turn_disclosure
+    scenario: disclosure
+    input_text: I have a farm.
+    pending_question: null
+    expected_slots: {}
+    forbidden_slots: {}
+    expected_dialogue_action: fill
+    reviewed_by: null
+  - id: confirm_yes
+    scenario: confirmation
+    input_text: Yes, that is right.
+    pending_question: __confirm__
+    initial_slots:
+      state: Tamil Nadu
+      district: Madurai
+      crop: rice
+      season: kharif
+      area_notified: true
+      owns_land: true
+      is_institutional_holder: false
+      pays_income_tax: false
+      has_grid_connected_pump: false
+      state_application_open: true
+      state_requirements_confirmed: true
+    expected_slots: {}
+    forbidden_slots: {}
+    expected_dialogue_action: confirm
+    reviewed_by: null
+  hi:
+  - id: full_information
+    scenario: full_information
+    input_text: तमिलनाडु में मेरे नाम दो एकड़ ज़मीन है, बोरवेल से सिंचाई करता हूँ, परिवार में कोई आयकर नहीं देता।
+    pending_question: null
+    expected_slots:
+      owns_land: true
+      state: Tamil Nadu
+      water_source: borewell
+      pays_income_tax: false
+    forbidden_slots: {}
+    expected_dialogue_action: fill
+    reviewed_by: null
+  - id: ownership_negation
+    scenario: ownership_negation
+    input_text: ज़मीन मेरे नाम पर नहीं है, पिताजी के नाम पर है।
+    pending_question: null
+    expected_slots:
+      owns_land: false
+    forbidden_slots:
+      owns_land: true
+    expected_dialogue_action: fill
+    reviewed_by: null
+  - id: short_yes_tax
+    scenario: short_yes
+    input_text: हाँ, मेरे भाई देते हैं।
+    pending_question: pays_income_tax
+    expected_slots:
+      pays_income_tax: true
+    forbidden_slots: {}
+    expected_dialogue_action: fill
+    reviewed_by: null
+  - id: short_no_tax
+    scenario: short_no
+    input_text: नहीं
+    pending_question: pays_income_tax
+    expected_slots:
+      pays_income_tax: false
+    forbidden_slots: {}
+    expected_dialogue_action: fill
+    reviewed_by: null
+  - id: uncertain_tax
+    scenario: uncertain_answer
+    input_text: पता नहीं।
+    pending_question: pays_income_tax
+    expected_slots: {}
+    forbidden_slots:
+      pays_income_tax: any
+    expected_dialogue_action: re-ask
+    reviewed_by: null
+  - id: state_correction
+    scenario: state_correction
+    input_text: नहीं, राज्य कर्नाटक है।
+    pending_question: __fix_slot__
+    initial_slots:
+      state: Tamil Nadu
+      water_source: canal
+    expected_slots:
+      state: Karnataka
+    forbidden_slots:
+      water_source: changes
+    expected_dialogue_action: correct
+    reviewed_by: null
+  - id: code_mixed
+    scenario: code_mixed
+    input_text: mere paas 2 acre land hai, borewell hai
+    pending_question: null
+    expected_slots:
+      water_source: borewell
+    forbidden_slots:
+      owns_land: false
+    expected_dialogue_action: fill
+    reviewed_by: null
+  - id: sensitive_numbers
+    scenario: sensitive_numbers
+    input_text: मेरा आधार नंबर 1234 5678 9012 है और मेरे पास दो एकड़ ज़मीन है।
+    pending_question: null
+    expected_slots: {}
+    forbidden_slots:
+      aadhaar: any
+      bank_account: any
+    expected_dialogue_action: fill
+    reviewed_by: null
+  - id: noisy_low_confidence
+    scenario: noise_low_confidence
+    input_text: आवाज़ साफ़ नहीं आई।
+    pending_question: pays_income_tax
+    expected_slots: {}
+    forbidden_slots:
+      pays_income_tax: any
+    expected_dialogue_action: fallback
+    mock_stt_confidence: 0.3
+    reviewed_by: null
+  - id: noisy_empty_transcript
+    scenario: noise_empty_transcript
+    input_text: ''
+    pending_question: pays_income_tax
+    expected_slots: {}
+    forbidden_slots:
+      pays_income_tax: any
+    expected_dialogue_action: fallback
+    mock_stt_confidence: 1.0
+    reviewed_by: null
+  - id: first_turn_disclosure
+    scenario: disclosure
+    input_text: मेरे पास एक खेत है।
+    pending_question: null
+    expected_slots: {}
+    forbidden_slots: {}
+    expected_dialogue_action: fill
+    reviewed_by: null
+  - id: confirm_yes
+    scenario: confirmation
+    input_text: हाँ, सही है।
+    pending_question: __confirm__
+    initial_slots:
+      state: Tamil Nadu
+      district: Madurai
+      crop: rice
+      season: kharif
+      area_notified: true
+      owns_land: true
+      is_institutional_holder: false
+      pays_income_tax: false
+      has_grid_connected_pump: false
+      state_application_open: true
+      state_requirements_confirmed: true
+    expected_slots: {}
+    forbidden_slots: {}
+    expected_dialogue_action: confirm
+    reviewed_by: null
+  ta:
+  - id: full_information
+    scenario: full_information
+    input_text: தமிழ்நாட்டில் என் பெயரில் இரண்டு ஏக்கர் நிலம் இருக்கிறது, ஆழ்துளை கிணறு பயன்படுத்துகிறேன், எங்கள் குடும்பத்தில்
+      யாரும் வருமான வரி செலுத்துவதில்லை.
+    pending_question: null
+    expected_slots:
+      owns_land: true
+      state: Tamil Nadu
+      water_source: borewell
+      pays_income_tax: false
+    forbidden_slots: {}
+    expected_dialogue_action: fill
+    reviewed_by: null
+  - id: ownership_negation
+    scenario: ownership_negation
+    input_text: நிலம் என் பெயரில் இல்லை, அப்பா பெயரில் உள்ளது.
+    pending_question: null
+    expected_slots:
+      owns_land: false
+    forbidden_slots:
+      owns_land: true
+    expected_dialogue_action: fill
+    reviewed_by: null
+  - id: short_yes_tax
+    scenario: short_yes
+    input_text: ஆம், என் தம்பி செலுத்துகிறார்.
+    pending_question: pays_income_tax
+    expected_slots:
+      pays_income_tax: true
+    forbidden_slots: {}
+    expected_dialogue_action: fill
+    reviewed_by: null
+  - id: short_no_tax
+    scenario: short_no
+    input_text: இல்லை
+    pending_question: pays_income_tax
+    expected_slots:
+      pays_income_tax: false
+    forbidden_slots: {}
+    expected_dialogue_action: fill
+    reviewed_by: null
+  - id: uncertain_tax
+    scenario: uncertain_answer
+    input_text: தெரியவில்லை.
+    pending_question: pays_income_tax
+    expected_slots: {}
+    forbidden_slots:
+      pays_income_tax: any
+    expected_dialogue_action: re-ask
+    reviewed_by: null
+  - id: state_correction
+    scenario: state_correction
+    input_text: இல்லை, மாநிலம் கர்நாடகா.
+    pending_question: __fix_slot__
+    initial_slots:
+      state: Tamil Nadu
+      water_source: canal
+    expected_slots:
+      state: Karnataka
+    forbidden_slots:
+      water_source: changes
+    expected_dialogue_action: correct
+    reviewed_by: null
+  - id: code_mixed
+    scenario: code_mixed
+    input_text: enakku 2 acre land irukku, borewell use pannuren
+    pending_question: null
+    expected_slots:
+      water_source: borewell
+    forbidden_slots:
+      owns_land: false
+    expected_dialogue_action: fill
+    reviewed_by: null
+  - id: sensitive_numbers
+    scenario: sensitive_numbers
+    input_text: என் ஆதார் எண் 1234 5678 9012. எனக்கு இரண்டு ஏக்கர் நிலம் உள்ளது.
+    pending_question: null
+    expected_slots: {}
+    forbidden_slots:
+      aadhaar: any
+      bank_account: any
+    expected_dialogue_action: fill
+    reviewed_by: null
+  - id: noisy_low_confidence
+    scenario: noise_low_confidence
+    input_text: ஒலி தெளிவாக இல்லை.
+    pending_question: pays_income_tax
+    expected_slots: {}
+    forbidden_slots:
+      pays_income_tax: any
+    expected_dialogue_action: fallback
+    mock_stt_confidence: 0.3
+    reviewed_by: null
+  - id: noisy_empty_transcript
+    scenario: noise_empty_transcript
+    input_text: ''
+    pending_question: pays_income_tax
+    expected_slots: {}
+    forbidden_slots:
+      pays_income_tax: any
+    expected_dialogue_action: fallback
+    mock_stt_confidence: 1.0
+    reviewed_by: null
+  - id: first_turn_disclosure
+    scenario: disclosure
+    input_text: எனக்கு ஒரு விவசாய நிலம் உள்ளது.
+    pending_question: null
+    expected_slots: {}
+    forbidden_slots: {}
+    expected_dialogue_action: fill
+    reviewed_by: null
+  - id: confirm_yes
+    scenario: confirmation
+    input_text: ஆம், சரிதான்.
+    pending_question: __confirm__
+    initial_slots:
+      state: Tamil Nadu
+      district: Madurai
+      crop: rice
+      season: kharif
+      area_notified: true
+      owns_land: true
+      is_institutional_holder: false
+      pays_income_tax: false
+      has_grid_connected_pump: false
+      state_application_open: true
+      state_requirements_confirmed: true
+    expected_slots: {}
+    forbidden_slots: {}
+    expected_dialogue_action: confirm
+    reviewed_by: null
+  te:
+  - id: full_information
+    scenario: full_information
+    input_text: తమిళనాడులో నా పేరు మీద రెండు ఎకరాల భూమి ఉంది, బోరుబావి వాడతాను, మా కుటుంబంలో ఎవరూ ఆదాయపు పన్ను కట్టరు.
+    pending_question: null
+    expected_slots:
+      owns_land: true
+      state: Tamil Nadu
+      water_source: borewell
+      pays_income_tax: false
+    forbidden_slots: {}
+    expected_dialogue_action: fill
+    reviewed_by: null
+  - id: ownership_negation
+    scenario: ownership_negation
+    input_text: భూమి నా పేరు మీద లేదు, నాన్న పేరు మీద ఉంది.
+    pending_question: null
+    expected_slots:
+      owns_land: false
+    forbidden_slots:
+      owns_land: true
+    expected_dialogue_action: fill
+    reviewed_by: null
+  - id: short_yes_tax
+    scenario: short_yes
+    input_text: అవును, మా తమ్ముడు కడతాడు.
+    pending_question: pays_income_tax
+    expected_slots:
+      pays_income_tax: true
+    forbidden_slots: {}
+    expected_dialogue_action: fill
+    reviewed_by: null
+  - id: short_no_tax
+    scenario: short_no
+    input_text: లేదు
+    pending_question: pays_income_tax
+    expected_slots:
+      pays_income_tax: false
+    forbidden_slots: {}
+    expected_dialogue_action: fill
+    reviewed_by: null
+  - id: uncertain_tax
+    scenario: uncertain_answer
+    input_text: తెలియదు.
+    pending_question: pays_income_tax
+    expected_slots: {}
+    forbidden_slots:
+      pays_income_tax: any
+    expected_dialogue_action: re-ask
+    reviewed_by: null
+  - id: state_correction
+    scenario: state_correction
+    input_text: కాదు, రాష్ట్రం కర్ణాటక.
+    pending_question: __fix_slot__
+    initial_slots:
+      state: Tamil Nadu
+      water_source: canal
+    expected_slots:
+      state: Karnataka
+    forbidden_slots:
+      water_source: changes
+    expected_dialogue_action: correct
+    reviewed_by: null
+  - id: code_mixed
+    scenario: code_mixed
+    input_text: naaku 2 acres land undi, borewell undi
+    pending_question: null
+    expected_slots:
+      water_source: borewell
+    forbidden_slots:
+      owns_land: false
+    expected_dialogue_action: fill
+    reviewed_by: null
+  - id: sensitive_numbers
+    scenario: sensitive_numbers
+    input_text: నా ఆధార్ నంబర్ 1234 5678 9012. నా దగ్గర రెండు ఎకరాల భూమి ఉంది.
+    pending_question: null
+    expected_slots: {}
+    forbidden_slots:
+      aadhaar: any
+      bank_account: any
+    expected_dialogue_action: fill
+    reviewed_by: null
+  - id: noisy_low_confidence
+    scenario: noise_low_confidence
+    input_text: శబ్దం స్పష్టంగా లేదు.
+    pending_question: pays_income_tax
+    expected_slots: {}
+    forbidden_slots:
+      pays_income_tax: any
+    expected_dialogue_action: fallback
+    mock_stt_confidence: 0.3
+    reviewed_by: null
+  - id: noisy_empty_transcript
+    scenario: noise_empty_transcript
+    input_text: ''
+    pending_question: pays_income_tax
+    expected_slots: {}
+    forbidden_slots:
+      pays_income_tax: any
+    expected_dialogue_action: fallback
+    mock_stt_confidence: 1.0
+    reviewed_by: null
+  - id: first_turn_disclosure
+    scenario: disclosure
+    input_text: నా దగ్గర ఒక పొలం ఉంది.
+    pending_question: null
+    expected_slots: {}
+    forbidden_slots: {}
+    expected_dialogue_action: fill
+    reviewed_by: null
+  - id: confirm_yes
+    scenario: confirmation
+    input_text: అవును, సరైనదే.
+    pending_question: __confirm__
+    initial_slots:
+      state: Tamil Nadu
+      district: Madurai
+      crop: rice
+      season: kharif
+      area_notified: true
+      owns_land: true
+      is_institutional_holder: false
+      pays_income_tax: false
+      has_grid_connected_pump: false
+      state_application_open: true
+      state_requirements_confirmed: true
+    expected_slots: {}
+    forbidden_slots: {}
+    expected_dialogue_action: confirm
+    reviewed_by: null
+

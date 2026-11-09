@@ -1,0 +1,23 @@
+id: pm_kisan
+name: PM-KISAN
+version: "2026-11-demo-1"
+source_url: "https://pmkisan.gov.in/Documents/RevisedPM-KISANOperationalGuidelines%28English%29.pdf"
+sources:
+  - "https://pmkisan.gov.in/Documents/RevisedPM-KISANOperationalGuidelines%28English%29.pdf"
+  - "https://pmkisan.gov.in/"
+last_verified: "2026-11-06"
+verified: false
+benefit: "Income support for eligible landholding farmer families."
+required_slots: [owns_land, is_institutional_holder, pays_income_tax]
+rules:
+  - {slot: owns_land, op: eq, value: true, source_ref: "PM-KISAN Operational Guidelines, §3 and §5.1"}
+  - {slot: is_institutional_holder, op: eq, value: false, source_ref: "PM-KISAN Operational Guidelines, §4.1(a)"}
+  - {slot: pays_income_tax, op: eq, value: false, source_ref: "PM-KISAN Operational Guidelines, §4.1(b)(v)"}
+not_checked:
+  - Other excluded family categories, including specified public offices, government service, pension, and registered professions.
+  - Land-record conditions, the 1 February 2019 cut-off, and succession exceptions.
+  - Family definition and duplicate or existing beneficiary checks.
+  - e-KYC completion, bank-account validation, and Aadhaar seeding status.
+next_steps:
+  documents: [land_record, bank_passbook]
+  guidance: "Confirm the full family exclusion criteria and land-record conditions on the official PM-KISAN portal. e-KYC is mandatory for registered farmers. Never share Aadhaar or bank numbers by voice."

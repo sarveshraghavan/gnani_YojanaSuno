@@ -1,0 +1,124 @@
+{"utterance": "हाँ", "lang": "hi", "pending_slot": "owns_land", "expected_slots": {"owns_land": true}, "reviewed_by": null, "review_date": null}
+{"utterance": "नहीं", "lang": "hi", "pending_slot": "owns_land", "expected_slots": {"owns_land": false}, "reviewed_by": null, "review_date": null}
+{"utterance": "हाँ", "lang": "hi", "pending_slot": "is_institutional_holder", "expected_slots": {"is_institutional_holder": true}, "reviewed_by": null, "review_date": null}
+{"utterance": "नहीं", "lang": "hi", "pending_slot": "is_institutional_holder", "expected_slots": {"is_institutional_holder": false}, "reviewed_by": null, "review_date": null}
+{"utterance": "हाँ", "lang": "hi", "pending_slot": "pays_income_tax", "expected_slots": {"pays_income_tax": true}, "reviewed_by": null, "review_date": null}
+{"utterance": "नहीं", "lang": "hi", "pending_slot": "pays_income_tax", "expected_slots": {"pays_income_tax": false}, "reviewed_by": null, "review_date": null}
+{"utterance": "हाँ", "lang": "hi", "pending_slot": "area_notified", "expected_slots": {"area_notified": true}, "reviewed_by": null, "review_date": null}
+{"utterance": "नहीं", "lang": "hi", "pending_slot": "area_notified", "expected_slots": {"area_notified": false}, "reviewed_by": null, "review_date": null}
+{"utterance": "हाँ", "lang": "hi", "pending_slot": "state_application_open", "expected_slots": {"state_application_open": true}, "reviewed_by": null, "review_date": null}
+{"utterance": "नहीं", "lang": "hi", "pending_slot": "state_application_open", "expected_slots": {"state_application_open": false}, "reviewed_by": null, "review_date": null}
+{"utterance": "हाँ", "lang": "hi", "pending_slot": "state_requirements_confirmed", "expected_slots": {"state_requirements_confirmed": true}, "reviewed_by": null, "review_date": null}
+{"utterance": "नहीं", "lang": "hi", "pending_slot": "state_requirements_confirmed", "expected_slots": {"state_requirements_confirmed": false}, "reviewed_by": null, "review_date": null}
+{"utterance": "मेरा खेत Tamil Nadu में है", "lang": "hi", "expected_slots": {"state": "Tamil Nadu"}, "reviewed_by": null, "review_date": null}
+{"utterance": "मेरी जमीन उत्तर प्रदेश में है", "lang": "hi", "expected_slots": {"state": "Tamil Nadu"}, "reviewed_by": null, "review_date": null}
+{"utterance": "मैं धान उगाता हूँ", "lang": "hi", "expected_slots": {"crop": "rice"}, "reviewed_by": null, "review_date": null}
+{"utterance": "मेरी फ़सल गेहूं है", "lang": "hi", "expected_slots": {"crop": "wheat"}, "reviewed_by": null, "review_date": null}
+{"utterance": "मेरे खेत में कपास है", "lang": "hi", "expected_slots": {"crop": "cotton"}, "reviewed_by": null, "review_date": null}
+{"utterance": "यह खरीफ की फ़सल है", "lang": "hi", "expected_slots": {"season": "kharif"}, "reviewed_by": null, "review_date": null}
+{"utterance": "यह रबी का मौसम है", "lang": "hi", "expected_slots": {"season": "rabi"}, "reviewed_by": null, "review_date": null}
+{"utterance": "मेरे खेत में borewell है", "lang": "hi", "expected_slots": {"water_source": "borewell"}, "reviewed_by": null, "review_date": null}
+{"utterance": "मेरे खेत को canal से पानी मिलता है", "lang": "hi", "expected_slots": {"water_source": "canal"}, "reviewed_by": null, "review_date": null}
+{"utterance": "मेरे खेत में rain water इस्तेमाल होता है", "lang": "hi", "expected_slots": {"water_source": "rain"}, "reviewed_by": null, "review_date": null}
+{"utterance": "मेरे खेत में well है", "lang": "hi", "expected_slots": {"water_source": "well"}, "reviewed_by": null, "review_date": null}
+{"utterance": "PM-KUSUM component B", "lang": "hi", "expected_slots": {"component": "B"}, "reviewed_by": null, "review_date": null}
+{"utterance": "PM-KUSUM component C", "lang": "hi", "expected_slots": {"component": "C"}, "reviewed_by": null, "review_date": null}
+{"utterance": "मेरी अपनी जमीन है", "lang": "hi", "expected_slots": {"owns_land": true}, "reviewed_by": null, "review_date": null}
+{"utterance": "मैं ठेके की जमीन पर खेती करता हूँ", "lang": "hi", "expected_slots": {"owns_land": false}, "reviewed_by": null, "review_date": null}
+{"utterance": "Madurai", "lang": "hi", "pending_slot": "district", "expected_slots": {"district": "Madurai"}, "reviewed_by": null, "review_date": null}
+{"utterance": "धान", "lang": "hi", "pending_slot": "crop", "expected_slots": {"crop": "rice"}, "reviewed_by": null, "review_date": null}
+{"utterance": "Tamil Nadu", "lang": "hi", "pending_slot": "state", "expected_slots": {"state": "Tamil Nadu"}, "reviewed_by": null, "review_date": null}
+{"utterance": "ஆம்", "lang": "ta", "pending_slot": "owns_land", "expected_slots": {"owns_land": true}, "reviewed_by": null, "review_date": null}
+{"utterance": "இல்லை", "lang": "ta", "pending_slot": "owns_land", "expected_slots": {"owns_land": false}, "reviewed_by": null, "review_date": null}
+{"utterance": "ஆம்", "lang": "ta", "pending_slot": "is_institutional_holder", "expected_slots": {"is_institutional_holder": true}, "reviewed_by": null, "review_date": null}
+{"utterance": "இல்லை", "lang": "ta", "pending_slot": "is_institutional_holder", "expected_slots": {"is_institutional_holder": false}, "reviewed_by": null, "review_date": null}
+{"utterance": "ஆம்", "lang": "ta", "pending_slot": "pays_income_tax", "expected_slots": {"pays_income_tax": true}, "reviewed_by": null, "review_date": null}
+{"utterance": "இல்லை", "lang": "ta", "pending_slot": "pays_income_tax", "expected_slots": {"pays_income_tax": false}, "reviewed_by": null, "review_date": null}
+{"utterance": "ஆம்", "lang": "ta", "pending_slot": "area_notified", "expected_slots": {"area_notified": true}, "reviewed_by": null, "review_date": null}
+{"utterance": "இல்லை", "lang": "ta", "pending_slot": "area_notified", "expected_slots": {"area_notified": false}, "reviewed_by": null, "review_date": null}
+{"utterance": "ஆம்", "lang": "ta", "pending_slot": "state_application_open", "expected_slots": {"state_application_open": true}, "reviewed_by": null, "review_date": null}
+{"utterance": "இல்லை", "lang": "ta", "pending_slot": "state_application_open", "expected_slots": {"state_application_open": false}, "reviewed_by": null, "review_date": null}
+{"utterance": "ஆம்", "lang": "ta", "pending_slot": "state_requirements_confirmed", "expected_slots": {"state_requirements_confirmed": true}, "reviewed_by": null, "review_date": null}
+{"utterance": "இல்லை", "lang": "ta", "pending_slot": "state_requirements_confirmed", "expected_slots": {"state_requirements_confirmed": false}, "reviewed_by": null, "review_date": null}
+{"utterance": "என் நிலம் தமிழ்நாட்டில் உள்ளது", "lang": "ta", "expected_slots": {"state": "Tamil Nadu"}, "reviewed_by": null, "review_date": null}
+{"utterance": "என் விவசாய நிலம் கர்நாடகாவில் உள்ளது", "lang": "ta", "expected_slots": {"state": "Karnataka"}, "reviewed_by": null, "review_date": null}
+{"utterance": "நான் நெல் பயிரிடுகிறேன்", "lang": "ta", "expected_slots": {"crop": "rice"}, "reviewed_by": null, "review_date": null}
+{"utterance": "என் பயிர் கோதுமை", "lang": "ta", "expected_slots": {"crop": "wheat"}, "reviewed_by": null, "review_date": null}
+{"utterance": "என் வயலில் பருத்தி உள்ளது", "lang": "ta", "expected_slots": {"crop": "cotton"}, "reviewed_by": null, "review_date": null}
+{"utterance": "இது காரிஃப் பருவம்", "lang": "ta", "expected_slots": {"season": "kharif"}, "reviewed_by": null, "review_date": null}
+{"utterance": "இது ரபி பருவம்", "lang": "ta", "expected_slots": {"season": "rabi"}, "reviewed_by": null, "review_date": null}
+{"utterance": "என் வயலில் borewell உள்ளது", "lang": "ta", "expected_slots": {"water_source": "borewell"}, "reviewed_by": null, "review_date": null}
+{"utterance": "என் வயலுக்கு canal நீர் வருகிறது", "lang": "ta", "expected_slots": {"water_source": "canal"}, "reviewed_by": null, "review_date": null}
+{"utterance": "என் வயலில் rain water பயன்படுத்துகிறேன்", "lang": "ta", "expected_slots": {"water_source": "rain"}, "reviewed_by": null, "review_date": null}
+{"utterance": "என் வயலில் well உள்ளது", "lang": "ta", "expected_slots": {"water_source": "well"}, "reviewed_by": null, "review_date": null}
+{"utterance": "PM-KUSUM component B", "lang": "ta", "expected_slots": {"component": "B"}, "reviewed_by": null, "review_date": null}
+{"utterance": "PM-KUSUM component C", "lang": "ta", "expected_slots": {"component": "C"}, "reviewed_by": null, "review_date": null}
+{"utterance": "எனக்கு சொந்தமான நிலம் உள்ளது", "lang": "ta", "expected_slots": {"owns_land": true}, "reviewed_by": null, "review_date": null}
+{"utterance": "நான் குத்தகை நிலத்தில் விவசாயம் செய்கிறேன்", "lang": "ta", "expected_slots": {"owns_land": false}, "reviewed_by": null, "review_date": null}
+{"utterance": "மதுரை", "lang": "ta", "pending_slot": "district", "expected_slots": {"district": "மதுரை"}, "reviewed_by": null, "review_date": null}
+{"utterance": "நெல்", "lang": "ta", "pending_slot": "crop", "expected_slots": {"crop": "rice"}, "reviewed_by": null, "review_date": null}
+{"utterance": "தமிழ்நாடு", "lang": "ta", "pending_slot": "state", "expected_slots": {"state": "தமிழ்நாடு"}, "reviewed_by": null, "review_date": null}
+{"utterance": "అవును", "lang": "te", "pending_slot": "owns_land", "expected_slots": {"owns_land": true}, "reviewed_by": null, "review_date": null}
+{"utterance": "కాదు", "lang": "te", "pending_slot": "owns_land", "expected_slots": {"owns_land": false}, "reviewed_by": null, "review_date": null}
+{"utterance": "అవును", "lang": "te", "pending_slot": "is_institutional_holder", "expected_slots": {"is_institutional_holder": true}, "reviewed_by": null, "review_date": null}
+{"utterance": "కాదు", "lang": "te", "pending_slot": "is_institutional_holder", "expected_slots": {"is_institutional_holder": false}, "reviewed_by": null, "review_date": null}
+{"utterance": "అవును", "lang": "te", "pending_slot": "pays_income_tax", "expected_slots": {"pays_income_tax": true}, "reviewed_by": null, "review_date": null}
+{"utterance": "కాదు", "lang": "te", "pending_slot": "pays_income_tax", "expected_slots": {"pays_income_tax": false}, "reviewed_by": null, "review_date": null}
+{"utterance": "అవును", "lang": "te", "pending_slot": "area_notified", "expected_slots": {"area_notified": true}, "reviewed_by": null, "review_date": null}
+{"utterance": "కాదు", "lang": "te", "pending_slot": "area_notified", "expected_slots": {"area_notified": false}, "reviewed_by": null, "review_date": null}
+{"utterance": "అవును", "lang": "te", "pending_slot": "state_application_open", "expected_slots": {"state_application_open": true}, "reviewed_by": null, "review_date": null}
+{"utterance": "కాదు", "lang": "te", "pending_slot": "state_application_open", "expected_slots": {"state_application_open": false}, "reviewed_by": null, "review_date": null}
+{"utterance": "అవును", "lang": "te", "pending_slot": "state_requirements_confirmed", "expected_slots": {"state_requirements_confirmed": true}, "reviewed_by": null, "review_date": null}
+{"utterance": "కాదు", "lang": "te", "pending_slot": "state_requirements_confirmed", "expected_slots": {"state_requirements_confirmed": false}, "reviewed_by": null, "review_date": null}
+{"utterance": "నా భూమి ఆంధ్రప్రదేశ్‌లో ఉంది", "lang": "te", "expected_slots": {"state": "Andhra Pradesh"}, "reviewed_by": null, "review_date": null}
+{"utterance": "నా పొలం Karnatakaలో ఉంది", "lang": "te", "expected_slots": {"state": "Karnataka"}, "reviewed_by": null, "review_date": null}
+{"utterance": "నేను వరి పండిస్తాను", "lang": "te", "expected_slots": {"crop": "rice"}, "reviewed_by": null, "review_date": null}
+{"utterance": "నా పంట గోధుమ", "lang": "te", "expected_slots": {"crop": "wheat"}, "reviewed_by": null, "review_date": null}
+{"utterance": "నా పొలంలో పత్తి ఉంది", "lang": "te", "expected_slots": {"crop": "cotton"}, "reviewed_by": null, "review_date": null}
+{"utterance": "ఇది ఖరీఫ్ పంట", "lang": "te", "expected_slots": {"season": "kharif"}, "reviewed_by": null, "review_date": null}
+{"utterance": "ఇది రబీ పంట", "lang": "te", "expected_slots": {"season": "rabi"}, "reviewed_by": null, "review_date": null}
+{"utterance": "నా పొలంలో borewell ఉంది", "lang": "te", "expected_slots": {"water_source": "borewell"}, "reviewed_by": null, "review_date": null}
+{"utterance": "నా పొలానికి canal నీరు వస్తుంది", "lang": "te", "expected_slots": {"water_source": "canal"}, "reviewed_by": null, "review_date": null}
+{"utterance": "నా పొలంలో rain water వాడుతాను", "lang": "te", "expected_slots": {"water_source": "rain"}, "reviewed_by": null, "review_date": null}
+{"utterance": "నా పొలంలో well ఉంది", "lang": "te", "expected_slots": {"water_source": "well"}, "reviewed_by": null, "review_date": null}
+{"utterance": "PM-KUSUM component B", "lang": "te", "expected_slots": {"component": "B"}, "reviewed_by": null, "review_date": null}
+{"utterance": "PM-KUSUM component C", "lang": "te", "expected_slots": {"component": "C"}, "reviewed_by": null, "review_date": null}
+{"utterance": "నా సొంత భూమి ఉంది", "lang": "te", "expected_slots": {"owns_land": true}, "reviewed_by": null, "review_date": null}
+{"utterance": "నేను కౌలు భూమిలో సాగు చేస్తున్నాను", "lang": "te", "expected_slots": {"owns_land": false}, "reviewed_by": null, "review_date": null}
+{"utterance": "మదురై", "lang": "te", "pending_slot": "district", "expected_slots": {"district": "మదురై"}, "reviewed_by": null, "review_date": null}
+{"utterance": "వరి", "lang": "te", "pending_slot": "crop", "expected_slots": {"crop": "rice"}, "reviewed_by": null, "review_date": null}
+{"utterance": "ఆంధ్రప్రదేశ్", "lang": "te", "pending_slot": "state", "expected_slots": {"state": "ఆంధ్రప్రదేశ్"}, "reviewed_by": null, "review_date": null}
+{"utterance": "Yes", "lang": "en", "pending_slot": "owns_land", "expected_slots": {"owns_land": true}, "reviewed_by": null, "review_date": null}
+{"utterance": "No", "lang": "en", "pending_slot": "owns_land", "expected_slots": {"owns_land": false}, "reviewed_by": null, "review_date": null}
+{"utterance": "Yes", "lang": "en", "pending_slot": "is_institutional_holder", "expected_slots": {"is_institutional_holder": true}, "reviewed_by": null, "review_date": null}
+{"utterance": "No", "lang": "en", "pending_slot": "is_institutional_holder", "expected_slots": {"is_institutional_holder": false}, "reviewed_by": null, "review_date": null}
+{"utterance": "Yes", "lang": "en", "pending_slot": "pays_income_tax", "expected_slots": {"pays_income_tax": true}, "reviewed_by": null, "review_date": null}
+{"utterance": "No", "lang": "en", "pending_slot": "pays_income_tax", "expected_slots": {"pays_income_tax": false}, "reviewed_by": null, "review_date": null}
+{"utterance": "Yes", "lang": "en", "pending_slot": "area_notified", "expected_slots": {"area_notified": true}, "reviewed_by": null, "review_date": null}
+{"utterance": "No", "lang": "en", "pending_slot": "area_notified", "expected_slots": {"area_notified": false}, "reviewed_by": null, "review_date": null}
+{"utterance": "Yes", "lang": "en", "pending_slot": "state_application_open", "expected_slots": {"state_application_open": true}, "reviewed_by": null, "review_date": null}
+{"utterance": "No", "lang": "en", "pending_slot": "state_application_open", "expected_slots": {"state_application_open": false}, "reviewed_by": null, "review_date": null}
+{"utterance": "Yes", "lang": "en", "pending_slot": "state_requirements_confirmed", "expected_slots": {"state_requirements_confirmed": true}, "reviewed_by": null, "review_date": null}
+{"utterance": "No", "lang": "en", "pending_slot": "state_requirements_confirmed", "expected_slots": {"state_requirements_confirmed": false}, "reviewed_by": null, "review_date": null}
+{"utterance": "My farm is in Tamil Nadu", "lang": "en", "expected_slots": {"state": "Tamil Nadu"}, "reviewed_by": null, "review_date": null}
+{"utterance": "My land is in Maharashtra", "lang": "en", "expected_slots": {"state": "Maharashtra"}, "reviewed_by": null, "review_date": null}
+{"utterance": "I grow rice", "lang": "en", "expected_slots": {"crop": "rice"}, "reviewed_by": null, "review_date": null}
+{"utterance": "My crop is wheat", "lang": "en", "expected_slots": {"crop": "wheat"}, "reviewed_by": null, "review_date": null}
+{"utterance": "I grow cotton", "lang": "en", "expected_slots": {"crop": "cotton"}, "reviewed_by": null, "review_date": null}
+{"utterance": "This is the kharif season", "lang": "en", "expected_slots": {"season": "kharif"}, "reviewed_by": null, "review_date": null}
+{"utterance": "I grow it in rabi", "lang": "en", "expected_slots": {"season": "rabi"}, "reviewed_by": null, "review_date": null}
+{"utterance": "I use a borewell", "lang": "en", "expected_slots": {"water_source": "borewell"}, "reviewed_by": null, "review_date": null}
+{"utterance": "My farm gets canal water", "lang": "en", "expected_slots": {"water_source": "canal"}, "reviewed_by": null, "review_date": null}
+{"utterance": "I use rain water", "lang": "en", "expected_slots": {"water_source": "rain"}, "reviewed_by": null, "review_date": null}
+{"utterance": "My farm has a well", "lang": "en", "expected_slots": {"water_source": "well"}, "reviewed_by": null, "review_date": null}
+{"utterance": "PM-KUSUM component B", "lang": "en", "expected_slots": {"component": "B"}, "reviewed_by": null, "review_date": null}
+{"utterance": "PM-KUSUM component C", "lang": "en", "expected_slots": {"component": "C"}, "reviewed_by": null, "review_date": null}
+{"utterance": "no grid connection", "lang": "en", "expected_slots": {"has_grid_connected_pump": false}, "reviewed_by": null, "review_date": null}
+{"utterance": "बिजली का कनेक्शन नहीं है", "lang": "hi", "expected_slots": {"has_grid_connected_pump": false}, "reviewed_by": null, "review_date": null}
+{"utterance": "மின் இணைப்பு இல்லை", "lang": "ta", "expected_slots": {"has_grid_connected_pump": false}, "reviewed_by": null, "review_date": null}
+{"utterance": "విద్యుత్ కనెక్షన్ ఉంది", "lang": "te", "expected_slots": {"has_grid_connected_pump": true}, "reviewed_by": null, "review_date": null}
+{"utterance": "I own land in my own name", "lang": "en", "expected_slots": {"owns_land": true}, "reviewed_by": null, "review_date": null}
+{"utterance": "I do not own land", "lang": "en", "expected_slots": {"owns_land": false}, "reviewed_by": null, "review_date": null}
+{"utterance": "Madurai", "lang": "en", "pending_slot": "district", "expected_slots": {"district": "Madurai"}, "reviewed_by": null, "review_date": null}
+{"utterance": "rice", "lang": "en", "pending_slot": "crop", "expected_slots": {"crop": "rice"}, "reviewed_by": null, "review_date": null}
+{"utterance": "Karnataka", "lang": "en", "pending_slot": "state", "expected_slots": {"state": "Karnataka"}, "reviewed_by": null, "review_date": null}

@@ -1,0 +1,17 @@
+id: per_drop_more_crop
+name: PMKSY — Per Drop More Crop (Micro Irrigation)
+version: "2026-11-draft-1"
+source_url: "https://pmksy.gov.in/microirrigation/Archive/Revised%20PDMC%20GL%202021.pdf"
+sources:
+  - "https://pmksy.gov.in/microirrigation/Archive/Revised%20PDMC%20GL%202021.pdf"
+last_verified: "2026-11-08"
+verified: false
+benefit: "Support for eligible farm-level water-saving irrigation, including drip or sprinkler systems; support and limits depend on state rules."
+required_slots: [micro_irrigation_interest]
+rules:
+  - {slot: micro_irrigation_interest, op: eq, value: true, source_ref: "PMKSY Per Drop More Crop Operational Guidelines, Sections 2.4 and 6: component focuses on farm-level micro irrigation (drip and sprinkler) and increasing its coverage"}
+not_checked:
+  - State-specific beneficiary selection, application window, system design, unit costs, subsidy rate, and district action plan.
+  - Land-record and installation requirements, supplier eligibility, water source eligibility, and cap/area calculations for a farmer's multiple plots.
+next_steps:
+  guidance: "Ask your state agriculture department which drip or sprinkler systems and application steps are currently supported."

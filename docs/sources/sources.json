@@ -1,0 +1,31 @@
+{
+  "checked_on": "2026-11-06",
+  "note": "No source files have been downloaded or placed in this folder. Add only documents obtained from the official portals, then record their actual download date and SHA-256 here.",
+  "schemes": [
+    {
+      "scheme_id": "pm_kisan",
+      "official_urls": [
+        "https://pmkisan.gov.in/Documents/RevisedPM-KISANOperationalGuidelines%28English%29.pdf",
+        "https://pmkisan.gov.in/"
+      ],
+      "documents": []
+    },
+    {
+      "scheme_id": "pmfby",
+      "official_urls": [
+        "https://pmfby.gov.in/pdf/Revised_Operational_Guidelines.pdf",
+        "https://pmfby.gov.in/"
+      ],
+      "documents": []
+    },
+    {
+      "scheme_id": "pm_kusum",
+      "official_urls": [
+        "https://pmkusum.mnre.gov.in/",
+        "https://pmkusum.mnre.gov.in/pdf/Guidelines%20for%20PM%20KUSUM%20Scheme%20%2822-07-2019%29.pdf",
+        "https://pmkusum.mnre.gov.in/assets/pdf/PM%20KUSUM%20FAQs%20-%20Revised_%20April%20%28Brand%29.pdf"
+      ],
+      "documents": []
+    }
+  ]
+}

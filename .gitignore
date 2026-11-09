@@ -1,0 +1,16 @@
+.env
+backend/.env
+samples/*
+!samples/.gitkeep
+tmp_audio/*
+!tmp_audio/.gitkeep
+eval/review/*.csv
+frontend/review/*.csv
+.venv/
+.demo_session.json
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.uv-cache/
+**/.uv-cache/

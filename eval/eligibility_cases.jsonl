@@ -1,0 +1,10 @@
+{"scheme_id":"pm_kisan","slots":{"owns_land":true,"is_institutional_holder":false,"pays_income_tax":false},"expected_status":"eligible"}
+{"scheme_id":"pm_kisan","slots":{"owns_land":true,"is_institutional_holder":false,"pays_income_tax":true},"expected_status":"not_eligible"}
+{"scheme_id":"pm_kisan","slots":{"owns_land":true},"expected_status":"need_more_info"}
+{"scheme_id":"pmfby","slots":{"state":"Tamil Nadu","district":"Madurai","crop":"rice","season":"kharif","area_notified":true},"expected_status":"eligible"}
+{"scheme_id":"pmfby","slots":{"state":"Tamil Nadu","district":"Madurai","crop":"rice","season":"kharif","area_notified":false},"expected_status":"not_eligible"}
+{"scheme_id":"pmfby","slots":{"state":"Tamil Nadu","district":"Madurai","crop":"rice","season":"kharif"},"expected_status":"need_more_info"}
+{"scheme_id":"pm_kusum","slots":{"state":"Tamil Nadu","has_grid_connected_pump":false,"state_application_open":true,"state_requirements_confirmed":true},"expected_status":"eligible"}
+{"scheme_id":"pm_kusum","slots":{"state":"Tamil Nadu","has_grid_connected_pump":false,"state_application_open":false,"state_requirements_confirmed":true},"expected_status":"not_eligible"}
+{"scheme_id":"pm_kusum","slots":{"state":"Tamil Nadu","has_grid_connected_pump":false},"expected_status":"need_more_info"}
+

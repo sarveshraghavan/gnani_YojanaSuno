@@ -1,0 +1,19 @@
+id: pmfby
+name: Pradhan Mantri Fasal Bima Yojana (PMFBY)
+version: "2026-11-demo-1"
+source_url: "https://pmfby.gov.in/pdf/Revised_Operational_Guidelines.pdf"
+sources:
+  - "https://pmfby.gov.in/pdf/Revised_Operational_Guidelines.pdf"
+  - "https://pmfby.gov.in/"
+last_verified: "2026-11-06"
+verified: false
+benefit: "Crop insurance for eligible notified crops and areas in a notified season."
+required_slots: [state, district, crop, season, area_notified]
+rules:
+  - {slot: area_notified, op: eq, value: true, source_ref: "PMFBY Revised Operational Guidelines, §7 (Notification)"}
+not_checked:
+  - Current state, district, village, crop, and season notification against the live PMFBY list.
+  - Enrollment deadline, farmer category, premium, and policy-specific risk coverage.
+next_steps:
+  documents: [land_or_cultivation_record, bank_details_for_official_application]
+  guidance: "States notify covered crops and defined areas for each season. Confirm the current notification and enrollment deadline with the official portal or local agriculture office."

@@ -1,0 +1,17 @@
+id: kcc
+name: Kisan Credit Card (KCC)
+version: "2026-11-draft-1"
+source_url: "https://rbi.org.in/scripts/BS_ViewMasterDirections.aspx?id=13523"
+sources:
+  - "https://rbi.org.in/scripts/BS_ViewMasterDirections.aspx?id=13523"
+last_verified: "2026-11-08"
+verified: false
+benefit: "A bank credit facility for eligible crop and allied farming needs; the bank decides the limit and approval."
+required_slots: [kcc_farmer_category]
+rules:
+  - {slot: kcc_farmer_category, op: in, value: [owner_cultivator, tenant_or_sharecropper, farmer_group], source_ref: "RBI Commercial Banks KCC Directions, 2026, paragraph 11 (Eligibility for crop cultivation); bank approval and state/district scale of finance not assessed"}
+not_checked:
+  - Bank credit appraisal, repayment capacity, identity/document requirements, credit history, collateral exceptions, and sanction amount.
+  - State and district crop Scale of Finance, current crop season, lender-specific procedures, and application availability.
+next_steps:
+  guidance: "Ask your bank or cooperative about KCC documents, crop-wise limits, and approval."

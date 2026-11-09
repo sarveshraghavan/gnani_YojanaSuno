@@ -1,0 +1,21 @@
+id: pm_kisan_maandhan
+name: PM-Kisan Maandhan Yojana
+version: "2026-11-draft-1"
+source_url: "https://pmkisan.gov.in/Documents/PM-KMY%20-%20Operational%20Guidelines.pdf"
+sources:
+  - "https://pmkisan.gov.in/Documents/PM-KMY%20-%20Operational%20Guidelines.pdf"
+  - "https://pmkisan.gov.in/Documents/PM-KMY%20-%20FAQs.pdf"
+last_verified: "2026-11-08"
+verified: false
+benefit: "A voluntary contributory pension option for eligible small and marginal farmers; contribution depends on joining age."
+required_slots: [farmer_age, cultivable_land_hectares]
+rules:
+  - {slot: farmer_age, op: gte, value: 18, source_ref: "PM-KMY Operational Guidelines, paragraph 4 (Eligibility), pages 2–3: age 18 years and above"}
+  - {slot: farmer_age, op: lte, value: 40, source_ref: "PM-KMY Operational Guidelines, paragraph 4 (Eligibility), pages 2–3: age up to 40 years"}
+  - {slot: cultivable_land_hectares, op: lte, value: 2, source_ref: "PM-KMY Operational Guidelines, paragraph 3(p) (Definitions), page 2: cultivable land up to 2 hectares per state/UT land records"}
+not_checked:
+  - Exclusions in paragraph 5 (other social-security schemes, PM-SYM/PM-LVM enrollment, institutional landholders, public office, government service, income-tax payment, and specified professionals).
+  - Enrollment status, contribution amount for age, spouse/family terms, and land-record verification.
+  - District/state enrollment availability, bank account and Aadhaar requirements, and current CSC process.
+next_steps:
+  guidance: "Ask a Common Service Centre to check current PM-KMY enrollment and contribution details. Do not share Aadhaar or bank numbers by voice."
