@@ -8,11 +8,17 @@ A voice-first guide that helps farmers find which government schemes may fit the
 
 > **Prototype and safety:** Active scheme rules are unverified drafts. Results are preliminary screening, not government decisions. In mock mode, speech recognition returns a canned phrase and does not transcribe the farmer. The current browser mic capture may fail with “Unable to decode audio data”; use the text box if it does. Never enter Aadhaar or bank numbers.
 
-**Quick links:** [One-page solution pitch](docs/solution_pitch.md) · [Demo walkthrough](docs/demo_script.md) · Demo video: not recorded yet
+**Quick links:** [Watch the demo video](https://drive.google.com/file/d/1QIdUu2Do_JTcrqOWtBhfGeR10HRqBC6d/view?usp=sharing) · [One-page solution pitch](docs/solution_pitch.md) · [Demo walkthrough](docs/demo_script.md)
 
-## Preview
+## Screenshots
 
-![YojanaSuno landing page screenshot (English, mock mode)](frontend/capture-test.png)
+| Tamil voice flow | English landing page |
+|---|---|
+| ![YojanaSuno Tamil voice flow](docs/images/yojanasuno-tamil-voice-flow.png) | ![YojanaSuno English landing page](docs/images/yojanasuno-english-landing.png) |
+
+| How it works and first check | Scheme form, FAQ, and footer |
+|---|---|
+| ![YojanaSuno how it works and scheme check](docs/images/yojanasuno-how-it-works.png) | ![YojanaSuno scheme form, FAQ, and footer](docs/images/yojanasuno-form-faq-footer.png) |
 
 ## What the prototype does
 
@@ -22,7 +28,7 @@ A voice-first guide that helps farmers find which government schemes may fit the
 - Uses an AI disclosure, redacts long digit sequences before extraction, and avoids collecting Aadhaar or bank numbers.
 - Shows missing checks, source links, and next steps; falls back to the Kisan Call Centre at 1551 when voice service is unavailable.
 
-## How it works
+## Architecture
 
 ```mermaid
 flowchart LR
