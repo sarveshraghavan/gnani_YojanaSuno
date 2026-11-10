@@ -2,6 +2,8 @@
 
 Voice first guide to a small set of Indian farm schemes. The prototype keeps scheme decisions in versioned data and Python rules; speech and language models can only transcribe, extract fields, and explain the deterministic result.
 
+See the one-page [YojanaSuno solution pitch](docs/solution_pitch.md).
+
 ## Run locally
 
 1. Use Python 3.11 or newer.
