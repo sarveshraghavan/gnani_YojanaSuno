@@ -425,6 +425,10 @@ def compose(results: list[dict], language: str) -> str:
                 reason_text = next_step
             line += ". " + reason_text
         lines.append(line)
+    if any("PM-KISAN" in r.get("name", "").upper() and r.get("status") == "eligible" for r in results):
+        guidance = localized_copy("pm_kisan_next_steps", language)
+        if guidance:
+            lines.append(guidance)
     return "\n".join(lines)
 
 def incomplete_message(language: str) -> str:

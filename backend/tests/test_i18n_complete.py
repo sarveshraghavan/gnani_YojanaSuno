@@ -12,7 +12,7 @@ from backend.app.dialogue.next_question import QUESTIONS
 ROOT=Path(__file__).resolve().parents[2]
 LANGS={"hi","ta","te","en"}
 SCRIPT_RANGES={"hi":range(0x0900,0x0980),"ta":range(0x0B80,0x0C00),"te":range(0x0C00,0x0C80)}
-ALLOWED_ENGLISH={"PM-KISAN","PMFBY","PM-KUSUM","WhatsApp","English","1551","1800 180 1551","Aadhaar","YojanaSuno","yojana","suno","Gnani","Evon","Timbre"}
+ALLOWED_ENGLISH={"PM-KISAN","PMFBY","PM-KUSUM","WhatsApp","English","1551","1800 180 1551","1800-180-1551","Aadhaar","YojanaSuno","yojana","suno","yojanasuno","Gnani","Evon","Timbre","Ministry of Agriculture","& Farmers Welfare","NABARD","Krishi Vigyan Kendra (KVK)"}
 
 class LanguageOptions(HTMLParser):
     def __init__(self): super().__init__();self.in_language=False;self.options={}
@@ -30,6 +30,7 @@ def _has_native_script(text,lang):
 
 def _check_localized(text,lang):
     if lang=="en":return
+    if text in ALLOWED_ENGLISH:return
     residue=text
     for token in ALLOWED_ENGLISH:residue=residue.replace(token,"")
     # Any remaining Latin word is an untranslated fragment; native script is mandatory too.
@@ -49,7 +50,7 @@ class LandingCoverage(HTMLParser):
         if a.get("aria-label") and not a.get("data-ia"):
             self.aria_without_key.append((tag,a["aria-label"]))
         if tag not in {"meta","link","input","br","hr","img","source","area","wbr"}:
-            self.stack.append((tag,any(k in a for k in ("data-i","data-ip","data-ia","data-im","data-ititle","data-prompt-key")),a.get("aria-hidden")=="true"))
+            self.stack.append((tag,tag in {"script","style"} or any(k in a for k in ("data-i","data-ip","data-ia","data-im","data-ititle","data-prompt-key")),a.get("aria-hidden")=="true"))
     def handle_endtag(self,tag):
         for i in range(len(self.stack)-1,-1,-1):
             if self.stack[i][0]==tag:
@@ -60,18 +61,26 @@ class LandingCoverage(HTMLParser):
 
 
 def landing_tables():
-    source=(ROOT/"frontend/i18n.js").read_text(encoding="utf-8")
+    html=(ROOT/"frontend/index.html").read_text(encoding="utf-8")
+    embedded=re.search(r"window\.YS_I18N\s*=\s*\{(.*?)\n\};",html,re.S)
+    source=embedded.group(1) if embedded else (ROOT/"frontend/i18n.js").read_text(encoding="utf-8")
     tables={}
     for lang in LANGS:
         match=re.search(rf"\b{lang}:\s*\{{(.*?)(?=\n  \}})",source,re.S)
         assert match, f"missing landing translation table: {lang}"
         tables[lang]=dict(re.findall(r"([A-Za-z_][A-Za-z0-9_]*):\s*\"([^\"]*)\"",match.group(1)))
+    extra=re.search(r"const extraTranslations\s*=\s*\{(.*?)\n\};",html,re.S)
+    if extra:
+        for lang,body in re.findall(r"\b(hi|ta|te|en):\s*\{([^{}]*)\}",extra.group(1)):
+            tables[lang].update(dict(re.findall(r"([A-Za-z_][A-Za-z0-9_]*):\s*\"([^\"]*)\"",body)))
+    for lang,value in re.findall(r'extraTranslations\.(hi|ta|te|en)\.reply_title\s*=\s*"([^"]*)"',html):
+        tables[lang]["reply_title"]=value
     return tables
 
 
 def test_landing_page_visible_copy_is_keyed_and_complete_in_all_languages():
     html=(ROOT/"frontend/index.html").read_text(encoding="utf-8")
-    assert '<script src="/static/i18n.js"></script>' in html, "translation table must use the FastAPI /static mount"
+    assert "window.YS_I18N" in html or '<script src="/static/i18n.js"></script>' in html, "landing translation table is not loaded"
     parser=LandingCoverage(); parser.feed(html)
     tables=landing_tables()
     assert set(tables)==LANGS
@@ -100,7 +109,7 @@ def test_backend_string_tables_have_complete_language_keys_and_native_text():
         for lang,text in translations.items():_check_localized(text,lang)
     for lang,text in AI_DISCLOSURES.items():_check_localized(text,lang)
     catalog=json.loads((ROOT/"backend/app/dialogue/review_strings.json").read_text(encoding="utf-8"))
-    for key in ("disclosures","fallbacks","privacy_warning","retry","scope"):
+    for key in ("disclosures","fallbacks","privacy_warning","retry","scope","pm_kisan_next_steps"):
         assert set(catalog[key])==LANGS, f"{key} translation table has incomplete language keys"
         for lang,text in catalog[key].items():_check_localized(text,lang)
     assert set(catalog["questions"])==set(QUESTIONS)

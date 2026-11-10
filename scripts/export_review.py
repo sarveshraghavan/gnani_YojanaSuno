@@ -7,6 +7,7 @@ ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
 from backend.app.dialogue.next_question import QUESTIONS
 from backend.app.dialogue.disclosure import AI_DISCLOSURES
 from backend.app.main import voice_fallback
+from backend.tests.test_i18n_complete import landing_tables
 
 class Texts(HTMLParser):
     def __init__(self): super().__init__(); self.parts=[]
@@ -26,17 +27,8 @@ def write(path, rows):
         w=csv.DictWriter(f,fieldnames=["id","language","text","expected_slots","reviewer_ok","correction","notes"]);w.writeheader();w.writerows(rows)
 
 def landing_translations():
-    """Read the small JS translation object without requiring a JS runtime."""
-    source=(ROOT/"frontend/i18n.js").read_text(encoding="utf-8")
-    tables={}
-    for lang in ("hi","ta","te","en"):
-        match=__import__("re").search(rf"\b{lang}:\s*\{{(.*?)(?=\n  \}})",source,__import__("re").S)
-        if not match: raise ValueError(f"Missing landing translations for {lang}")
-        tables[lang]=dict(__import__("re").findall(r"([A-Za-z_][A-Za-z0-9_]*):\s*\"([^\"]*)\"",match.group(1)))
-    keys=set(tables["en"])
-    for lang,table in tables.items():
-        if set(table)!=keys: raise ValueError(f"Landing translation keys differ for {lang}")
-    return tables
+    """Resolve the active page translation table, including inline runtime copy."""
+    return landing_tables()
 def main():
     catalog_path=ROOT/"backend/app/dialogue/review_strings.json"
     existing=json.loads(catalog_path.read_text(encoding="utf-8")) if catalog_path.exists() else {}
@@ -64,9 +56,10 @@ def main():
             rows.append({"id":f"question:{slot}:{lang}","language":lang,"text":text,
                 "expected_slots":"","reviewer_ok":"","correction":"",
                 "notes":"Needs native-speaker review" if needs_native_review else ""})
-    for group in ("disclosures","fallbacks","privacy_warning","retry","scope"):
+    for group in ("disclosures","fallbacks","privacy_warning","retry","scope","pm_kisan_next_steps"):
         for lang,text in catalog.get(group,{}).items():
-            rows.append({"id":f"{group}:{lang}","language":lang,"text":text,"expected_slots":"","reviewer_ok":"","correction":"","notes":""})
+            rows.append({"id":f"{group}:{lang}","language":lang,"text":text,"expected_slots":"","reviewer_ok":"","correction":"",
+                         "notes":"Needs native-speaker review" if group == "pm_kisan_next_steps" and lang in {"hi","ta","te"} else ""})
     html=(ROOT/"frontend/index.html").read_text(encoding="utf-8")
     tables=landing_translations()
     keys=set()
